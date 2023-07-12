@@ -1,5 +1,11 @@
+body{
+  overflow-x: hidden;
+}
 .App {
   text-align: center;
+}
+body{
+  background-color: lightgray;
 }
 
 .App-logo {
@@ -12,6 +18,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+/* button{
+  height: 50px;
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 20px;
+} */
 
 .App-header {
   background-color: #282c34;

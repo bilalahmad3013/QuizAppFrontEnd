@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from './screens/Home';
+import { QuizProvider } from './components/QuizContext';
+import Questions from './screens/Questions';
+import Result from './screens/Result';
+import Instructons from './screens/Instructons';
+import Login from './screens/login';
+import SignUp from './screens/signup';
+import PrevQuiz from './screens/PrevQuiz';
+
 
 function App() {
+
+  const router = createBrowserRouter([
+    { path: "/", element: <Home /> },
+    { path: "/login", element: <Login />},
+    { path: "/createuser", element: <SignUp/> },
+    { path: "/test", element: <Questions /> },
+    {path:"/testResult", element:<Result/>},
+    {path:"/prevQuiz", element:<PrevQuiz />},
+
+    {path:"/testInstruction", element:<Instructons />},
+    
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QuizProvider>
+      <div>
+         <RouterProvider router={router} />
+      </div>
+      </QuizProvider>
   );
 }
 
